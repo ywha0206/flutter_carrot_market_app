@@ -16,7 +16,12 @@ class ChattingPage extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          ChatContainer(chatMessage: chatMessageList[0]),
+          ...List.generate(
+            chatMessageList.length,
+            (index) {
+              return ChatContainer(chatMessage: chatMessageList[index]);
+            },
+          ),
         ],
       ),
     );
